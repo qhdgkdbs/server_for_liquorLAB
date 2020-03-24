@@ -3,10 +3,6 @@ const express = require('express')
 const router = express.Router();
 const ctrl = require('./liquor.ctrl')
 
-// router.get('/img', ctrl.getImg)
-
-router.get('/imgs', ctrl.getImg)
-
 router.get('/', ctrl.index)
 
 router.get('/:title', ctrl.show)

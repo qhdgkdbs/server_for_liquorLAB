@@ -3,22 +3,6 @@ var fs = require('fs');
 
 const models = require('../../models');
 
-const getImg = (req, res) => {
-    fs.readFile('./icon.png', function (err, data){
-            // res.writeHead(200, { "Context-Type": "image/jpg" });//보낼 헤더를 만듬
-            if(data){
-                console.log(data)
-                return res.status(200).end(data);  //클라이언트에게 응답을 전송한다
-            }else{
-                console.log(err)
-                return res.status(400).end(data);
-            }
-            
-        }
-    );
-
-}
-
 const index = (req, res) => {
     req.query.limit = req.query.limit || 10;
     const limit = parseInt(req.query.limit, 10);
@@ -140,5 +124,4 @@ module.exports={
     destory,
     create,
     update,
-    getImg
 }

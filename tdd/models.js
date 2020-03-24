@@ -5,15 +5,25 @@ const sequelize = new Sequelize({
     logging : false
 });
 
-const User = sequelize.define('User', {
-    name : {
+const Liquor = sequelize.define('Liquor', {
+    title : {
         type : Sequelize.STRING,
         unique : true
-    }
+    },
+    des : {
+        type : Sequelize.STRING,
+    },
+    info : {
+        type : Sequelize.STRING,
+    },
+    item : {
+        type : Sequelize.STRING,
+    },
+    
 });
 
 module.exports = {
     Sequelize,
     sequelize,
-    User
+    Liquor
 };
